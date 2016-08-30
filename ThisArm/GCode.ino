@@ -53,6 +53,7 @@ void where() {
   output("Y",Y);
   output("Z",Z);
   output("C",AngularServos[ServoClaw].Angle);
+  output("W",AngularServos[ServoWrist].Angle);  
   output("F",FeedRate);
   Serial.println(mode_abs?"ABS":"REL");
 } 
@@ -95,6 +96,7 @@ void help() {
   
   Serial.println(F("M100; - this help message"));
   Serial.println(F("M106 [S(Claw angle)]; - set angle of Claw"));
+  Serial.println(F("M107 [S(Wrist angle)]; - set angle of Wrist"));  
   Serial.println(F("M114; - report position and feedrate"));
   Serial.println(F("All commands must end with a newline."));
 }
@@ -232,6 +234,11 @@ void processCommand() {
     ASet(AngularServos[ServoClaw], parsenumber('S',AngularServos[ServoClaw].Angle));
     break; // set Claw 
   }
+  case 107: {
+    //Serial.print(parsenumber('S',90)); 
+    ASet(AngularServos[ServoWrist], parsenumber('S',AngularServos[ServoWrist].Angle));
+    break; // set Wrist 
+  }  
   case 114:  where();  break;
   default:  break;
   }

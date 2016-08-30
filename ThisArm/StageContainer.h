@@ -36,11 +36,11 @@ void initStages () {
 }
 
 void initStages_Multi(){
-  CurrentStage=7;
+  CurrentStage=0;
   
   //Init the Stage 0, raw stage
   Stages[0].StageName="RawEncoderStage";
-  Stages[0].InitProc= EncoderRawControl_Init;
+  Stages[0].InitProc=EncoderRawControl_Init;
   Stages[0].ControlProc=EncoderRawControl;
   Stages[0].DisplayProc=DisplayRaw;
   

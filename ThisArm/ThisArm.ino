@@ -28,8 +28,8 @@ void DisplayRaw();
 void EmptyProc();
 
 //encoder definition
-#define Encoder1_A 12
-#define Encoder1_B 13
+#define Encoder1_A 2
+#define Encoder1_B 3
 #define Encoder1_Click 11
 
 byte Drag_Flag=0;//flag indicate whether a Drag action occured
@@ -69,6 +69,7 @@ double BaseAngle =90;
 double Shoulder=90;
 double Elbow=90;
 double Claw=45;
+double Wrist=45;
 
 //Invert Kinetic control, in polar coordinate R, H and A
 double R;

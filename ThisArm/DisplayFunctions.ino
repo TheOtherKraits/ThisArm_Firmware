@@ -61,6 +61,10 @@ void DisplayLogicAngle(){
       Serial.print(" Claw: ");
       Serial.print(Claw);
       break;
+    case 4:
+      Serial.print(" Wrist: ");
+      Serial.print(Wrist);
+      break;      
   }
   Serial.println();
 }
@@ -74,6 +78,8 @@ void DisplayJointRaw () {
   Serial.print ( Joints[2].value);
   Serial.print (" ");
   Serial.print ( Joints[3].value);
+  Serial.print (" ");
+  Serial.print ( Joints[4].value);  
   
   Serial.println ();
 }
@@ -95,6 +101,10 @@ void DisplayJointAngle () {
   Serial.print ( Joints[3].value);
   Serial.print (" ");
   Serial.print ( LinearMap_float(Joints[JointClaw].raw_1, Joints[JointClaw].ang_1,Joints[JointClaw].raw_2, Joints[JointClaw].ang_2, Joints[JointClaw].value));
+  Serial.print (" Wrist: ");
+  Serial.print ( Joints[4].value);
+  Serial.print (" ");
+  Serial.print ( LinearMap_float(Joints[JointWrist].raw_1, Joints[JointWrist].ang_1,Joints[JointWrist].raw_2, Joints[JointWrist].ang_2, Joints[JointWrist].value));  
   Serial.println ();
 }
 
@@ -117,6 +127,9 @@ void DisplayARH (){
     case 3:
       Serial.print(" Claw] ");
       break;
+    case 4:
+      Serial.print(" Wrist] ");
+      break;      
   }
   Serial.print("Values A: ");
   Serial.print(BaseAngle);
@@ -130,6 +143,8 @@ void DisplayARH (){
   Serial.print (Elbow);
   Serial.print(" Values Claw: ");
   Serial.print(Claw);
+  Serial.print(" Values Wrist: ");
+  Serial.print(Wrist);  
   Serial.print(" RC: ");
   Serial.print(rc);
   Serial.println();
@@ -157,6 +172,9 @@ void DisplayXYZ (){
     case 3:
       Serial.print(" Claw] ");
       break;
+    case 4:
+      Serial.print(" Wrist] ");
+      break;      
   }
   Serial.print("Values X: ");
   Serial.print(X);

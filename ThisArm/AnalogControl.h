@@ -9,11 +9,12 @@
 
 
 
-#define NumOfJoint 4
+#define NumOfJoint 5
 #define JointBase 0
 #define JointShoulder 1
 #define JointElbow  2
 #define JointClaw 3
+#define JointWrist 4
 
 struct AnalogJoint {
   byte pin;
@@ -56,6 +57,8 @@ void initJointsControl (){
   Joints[JointClaw].ang_1=90;
   Joints[JointClaw].raw_2=560;
   Joints[JointClaw].ang_2=0;
+  
+  //init of Wrist
 
   for (int i=0;i<NumOfJoint;i++){
     pinMode (Joints[i].pin,INPUT_PULLUP);

@@ -40,6 +40,7 @@ void EncoderLogicAngleControl_Init(){
   Shoulder=90;
   Elbow=90;
   Claw=45;
+  Wrist=45;
 }
 
 void EncoderARHControl_Init (){
@@ -48,6 +49,7 @@ void EncoderARHControl_Init (){
   R=80;
   H=0;
   Claw=45; 
+  Wrist=45;  
 }
 
 
@@ -57,6 +59,7 @@ void EncoderXYZControl_Init (){
   X=00;
   Y=80;
   Z=0;
+  Wrist=45;  
 }
 
 

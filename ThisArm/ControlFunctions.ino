@@ -61,6 +61,11 @@ void EncoderLogicAngleControl(){
       PressTurnCount=0;
       ReleaseTurnCount =0;
       break;
+    case 4:
+      Wrist=Wrist+ReleaseTurnCount/2+PressTurnCount;
+      PressTurnCount=0;
+      ReleaseTurnCount =0;
+      break;      
   }
   
   //Calculate angle for each servo
@@ -68,6 +73,7 @@ void EncoderLogicAngleControl(){
   AngularServos[ServoRight].Angle=Shoulder;
   AngularServos[ServoLeft].Angle=Elbow+AngularServos[ServoRight].Angle;
   AngularServos[ServoClaw].Angle=Claw;
+  AngularServos[ServoWrist].Angle=Wrist;  
   
   //Acturate servo output
   for (int i = 0; i < NumOfServo; i++){
@@ -87,12 +93,14 @@ void AnalogLogicAngleControl(){
   Shoulder=Joints[JointShoulder].angle;
   Elbow=Joints[JointElbow].angle;
   Claw=Joints[JointClaw].angle;
+  Wrist=Joints[JointClaw].angle;  
   
   //Calculate angle for each servo
   AngularServos[ServoBase].Angle=BaseAngle;
   AngularServos[ServoRight].Angle=Shoulder;
   AngularServos[ServoLeft].Angle=Elbow+AngularServos[ServoRight].Angle;
   AngularServos[ServoClaw].Angle=Claw;
+  AngularServos[ServoWrist].Angle=Wrist;  
   
   
   //Acturate servo output
@@ -126,6 +134,11 @@ void EncoderARHControl(){
       PressTurnCount=0;
       ReleaseTurnCount =0;
       break;
+    case 4:
+      Wrist=Wrist+ReleaseTurnCount/2+PressTurnCount;
+      PressTurnCount=0;
+      ReleaseTurnCount =0;
+      break;
   }
 
   InverseKinematicsTransform ( R, H, Shoulder, Elbow);
@@ -135,6 +148,7 @@ void EncoderARHControl(){
   AngularServos[ServoRight].Angle=Shoulder;
   AngularServos[ServoLeft].Angle=Elbow+AngularServos[ServoRight].Angle;
   AngularServos[ServoClaw].Angle=Claw;
+  AngularServos[ServoWrist].Angle=Wrist;  
   
   //Acturate servo output
   for (int i = 0; i < NumOfServo; i++){
@@ -169,6 +183,11 @@ void EncoderXYZControl(){
       PressTurnCount=0;
       ReleaseTurnCount =0;
       break;
+    case 4:
+      Wrist=Wrist+ReleaseTurnCount/2+PressTurnCount;
+      PressTurnCount=0;
+      ReleaseTurnCount =0;
+      break;      
   }
 
   C2P(X,Y,Z,R,H,A);
@@ -181,6 +200,7 @@ void EncoderXYZControl(){
   AngularServos[ServoRight].Angle=Shoulder;
   AngularServos[ServoLeft].Angle=Elbow+AngularServos[ServoRight].Angle;
   AngularServos[ServoClaw].Angle=Claw;
+  AngularServos[ServoWrist].Angle=Wrist;
   
   //Acturate servo output
   for (int i = 0; i < NumOfServo; i++){
