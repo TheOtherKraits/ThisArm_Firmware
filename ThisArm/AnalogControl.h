@@ -59,6 +59,11 @@ void initJointsControl (){
   Joints[JointClaw].ang_2=0;
   
   //init of Wrist
+  Joints[JointWrist].pin=A4;
+  Joints[JointWrist].raw_1=726;
+  Joints[JointWrist].ang_1=90;
+  Joints[JointWrist].raw_2=560;
+  Joints[JointWrist].ang_2=0;  
 
   for (int i=0;i<NumOfJoint;i++){
     pinMode (Joints[i].pin,INPUT_PULLUP);
