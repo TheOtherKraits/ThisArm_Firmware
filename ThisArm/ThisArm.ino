@@ -28,9 +28,9 @@ void DisplayRaw();
 void EmptyProc();
 
 //encoder definition
-#define Encoder1_A 2
-#define Encoder1_B 3
 #define Encoder1_Click 11
+#define Encoder1_A 12
+#define Encoder1_B 13
 
 byte Drag_Flag=0;//flag indicate whether a Drag action occured
 long ReleaseTurnCount =0;

@@ -12,7 +12,7 @@ typedef void (*VoidProcedure) ();
 
 
 void EmptyProc (){
-  
+
 }
 struct StageContainer {
   char *StageName;
@@ -36,14 +36,14 @@ void initStages () {
 }
 
 void initStages_Multi(){
-  CurrentStage=0;
-  
+  CurrentStage=7;
+
   //Init the Stage 0, raw stage
   Stages[0].StageName="RawEncoderStage";
   Stages[0].InitProc=EncoderRawControl_Init;
   Stages[0].ControlProc=EncoderRawControl;
   Stages[0].DisplayProc=DisplayRaw;
-  
+
   //init the Stage1, Encoder AngularControl
   Stages[1].StageName="AnguleEncoderStage";
   Stages[1].InitProc= EncoderAngleControl_Init;
@@ -106,4 +106,3 @@ void initStages_Multi(){
 * You should have received a copy of the GNU General Public License
 * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
 */
-

@@ -21,7 +21,7 @@ struct AngularServo {
   int MIN;
   int MAX;
   int INITANGLE;
-  Servo ServoObj;  
+  Servo ServoObj;
 };
 
 //servo control setup
@@ -48,7 +48,7 @@ int ASet(AngularServo AServo, float angle){
   int tempValue=0;
   int rc;
   rc=ACheck(AServo, angle,tempValue);
- 
+
   switch (rc) {
     case 1:
       AServo.value=AServo.MAX;
@@ -66,13 +66,13 @@ int ASet(AngularServo AServo, float angle){
   }
   AServo.ServoObj.write (AServo.value);
   return rc;
-  
+
 }
 
 void AngularServoInit(){// extreme value: 654~2400
   //Base Servo
   AngularServos[ServoBase].PIN = 10;
-  AngularServos[ServoBase].MIN = 600;
+  AngularServos[ServoBase].MIN = 654;
   AngularServos[ServoBase].MAX = 2400;
   AngularServos[ServoBase].raw_1=1499;
   AngularServos[ServoBase].ang_1=90; //This should bring the arm face forward
@@ -81,17 +81,17 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoBase].INITANGLE = 90;
   //Left Servo
   AngularServos[ServoLeft].PIN = 9;
-  AngularServos[ServoLeft].MIN = 600; 
-  AngularServos[ServoLeft].MAX = 2400;
+  AngularServos[ServoLeft].MIN = 841;
+  AngularServos[ServoLeft].MAX = 2248;
   AngularServos[ServoLeft].raw_1=1887;
-  AngularServos[ServoLeft].ang_1=45;// This should bring the lever parallel with the ground
+  AngularServos[ServoLeft].ang_1=110;// This should bring the lever parallel with the ground
   AngularServos[ServoLeft].raw_2=865;
-  AngularServos[ServoLeft].ang_2=160; // This should bring the lever vertical to the ground
-  AngularServos[ServoLeft].INITANGLE = 90; 
+  AngularServos[ServoLeft].ang_2=0; // This should bring the lever vertical to the ground
+  AngularServos[ServoLeft].INITANGLE = 45;
   //Right Servo
   AngularServos[ServoRight].PIN = 6;
   AngularServos[ServoRight].MIN = 600;
-  AngularServos[ServoRight].MAX = 2400;
+  AngularServos[ServoRight].MAX = 2412;
   AngularServos[ServoRight].raw_1=2319;
   AngularServos[ServoRight].ang_1=0; // This should bring the lever parallel with the ground
   AngularServos[ServoRight].raw_2=1292;
@@ -99,15 +99,15 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoRight].INITANGLE = 90;
   //Claw Servo
   AngularServos[ServoClaw].PIN = 5;
-  AngularServos[ServoClaw].MIN = 600;
+  AngularServos[ServoClaw].MIN = 800;
   AngularServos[ServoClaw].MAX = 2400;
   AngularServos[ServoClaw].raw_1=2400;
   AngularServos[ServoClaw].ang_1=0; // This is the angle where the claw completely close
   AngularServos[ServoClaw].raw_2=1126;
-  AngularServos[ServoClaw].ang_2=90; // This is the angle where the two claws are 90 degree with the centre line (180 degree with each other)
-  AngularServos[ServoClaw].INITANGLE = 45;
+  AngularServos[ServoClaw].ang_2=180; // This is the angle where the two claws are 90 degree with the centre line (180 degree with each other)
+  AngularServos[ServoClaw].INITANGLE = 70;
   //Wrist Servo
-  AngularServos[ServoWrist].PIN = 11;
+  AngularServos[ServoWrist].PIN = 12;
   AngularServos[ServoWrist].MIN = 600;
   AngularServos[ServoWrist].MAX = 2400;
   AngularServos[ServoWrist].raw_1=2400;
@@ -115,17 +115,17 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoWrist].raw_2=1126;
   AngularServos[ServoWrist].ang_2=90; // This is the angle where the two claws are 90 degree with the centre line (180 degree with each other)
   AngularServos[ServoWrist].INITANGLE = 45;
-  
+
   for (int i = 0; i < NumOfServo; i++){
     AngularServos[i].ServoObj.attach(AngularServos[i].PIN);
     AngularServos[i].ServoObj.write(AngularServos[i].INITANGLE);
     AngularServos[i].value=1500; // supposed to be middle
     AngularServos[i].Angle = AngularServos[i].INITANGLE;
     AngularServos[i].idle = 0;
-    
+
   }
 }
-  
+
 
 
 /**
@@ -144,4 +144,3 @@ void AngularServoInit(){// extreme value: 654~2400
 * You should have received a copy of the GNU General Public License
 * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
 */
-
