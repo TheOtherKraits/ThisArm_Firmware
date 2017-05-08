@@ -84,10 +84,10 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoLeft].MIN = 600; 
   AngularServos[ServoLeft].MAX = 2400;
   AngularServos[ServoLeft].raw_1=1887;
-  AngularServos[ServoLeft].ang_1=180;// This should bring the lever parallel with the ground
+  AngularServos[ServoLeft].ang_1=45;// This should bring the lever parallel with the ground
   AngularServos[ServoLeft].raw_2=865;
-  AngularServos[ServoLeft].ang_2=90; // This should bring the lever vertical to the ground
-  AngularServos[ServoLeft].INITANGLE = 180; 
+  AngularServos[ServoLeft].ang_2=160; // This should bring the lever vertical to the ground
+  AngularServos[ServoLeft].INITANGLE = 90; 
   //Right Servo
   AngularServos[ServoRight].PIN = 6;
   AngularServos[ServoRight].MIN = 600;
