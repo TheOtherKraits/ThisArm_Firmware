@@ -59,7 +59,7 @@ You can change the pin assignment as you want after you understand the code. The
 | A1 | Potentiometer for Shoulder | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
 | A2 | Potentiometer for Elbow | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
 | A3 | Potentiometer for Claw | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
-| A3 | Potentiometer for Wrist | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
+| A4 | Potentiometer for Wrist | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
 
 ## Source Code Files Explained
 
