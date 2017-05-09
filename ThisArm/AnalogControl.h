@@ -31,35 +31,35 @@ struct AnalogJoint Joints[NumOfJoint];
 void initJointsControl (){
   
   //init of base
-  Joints[JointBase].pin=A2;
+  Joints[JointBase].pin=JointBase_PIN;
   Joints[JointBase].raw_1=468;
   Joints[JointBase].ang_1=90;
   Joints[JointBase].raw_2=727;
   Joints[JointBase].ang_2=180;
   
   //init of Shoulder
-  Joints[JointShoulder].pin=A1;
+  Joints[JointShoulder].pin=JointShoulder_PIN;
   Joints[JointShoulder].raw_1=797;
   Joints[JointShoulder].ang_1=0;
   Joints[JointShoulder].raw_2=532;
   Joints[JointShoulder].ang_2=90;
   
   //init of Elbow
-  Joints[JointElbow].pin=A0;
+  Joints[JointElbow].pin=JointElbow_PIN;
   Joints[JointElbow].raw_1=461;
   Joints[JointElbow].ang_1=90;
   Joints[JointElbow].raw_2=744;
   Joints[JointElbow].ang_2=180;
 
   //init of Claw
-  Joints[JointClaw].pin=A3;
+  Joints[JointClaw].pin=JointClaw_PIN;
   Joints[JointClaw].raw_1=726;
   Joints[JointClaw].ang_1=90;
   Joints[JointClaw].raw_2=560;
   Joints[JointClaw].ang_2=0;
   
   //init of Wrist
-  Joints[JointWrist].pin=A4;
+  Joints[JointWrist].pin=JointWrist_PIN;
   Joints[JointWrist].raw_1=726;
   Joints[JointWrist].ang_1=90;
   Joints[JointWrist].raw_2=560;

@@ -24,14 +24,6 @@ struct AngularServo {
   Servo ServoObj;
 };
 
-//servo control setup
-#define NumOfServo 5
-#define ServoBase 0
-#define ServoLeft 1
-#define ServoRight 2
-#define ServoClaw 3
-#define ServoWrist 4
-
 AngularServo AngularServos [NumOfServo];
 //Servo myservo[NumOfServo];
 
@@ -71,7 +63,7 @@ int ASet(AngularServo AServo, float angle){
 
 void AngularServoInit(){// extreme value: 654~2400
   //Base Servo
-  AngularServos[ServoBase].PIN = 10;
+  AngularServos[ServoBase].PIN = ServoBase_PIN;
   AngularServos[ServoBase].MIN = 654;
   AngularServos[ServoBase].MAX = 2400;
   AngularServos[ServoBase].raw_1=1499;
@@ -80,7 +72,7 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoBase].ang_2=180; // This should bring the arm face the left hand side
   AngularServos[ServoBase].INITANGLE = 90;
   //Left Servo
-  AngularServos[ServoLeft].PIN = 9;
+  AngularServos[ServoLeft].PIN = ServoLeft_PIN;
   AngularServos[ServoLeft].MIN = 841;
   AngularServos[ServoLeft].MAX = 2248;
   AngularServos[ServoLeft].raw_1=1887;
@@ -89,7 +81,7 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoLeft].ang_2=0; // This should bring the lever vertical to the ground
   AngularServos[ServoLeft].INITANGLE = 45;
   //Right Servo
-  AngularServos[ServoRight].PIN = 6;
+  AngularServos[ServoRight].PIN = ServoRight_PIN;
   AngularServos[ServoRight].MIN = 600;
   AngularServos[ServoRight].MAX = 2412;
   AngularServos[ServoRight].raw_1=2319;
@@ -98,7 +90,7 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoRight].ang_2=90; // This should bring the lever vertical to the ground
   AngularServos[ServoRight].INITANGLE = 90;
   //Claw Servo
-  AngularServos[ServoClaw].PIN = 5;
+  AngularServos[ServoClaw].PIN = ServoClaw_PIN;
   AngularServos[ServoClaw].MIN = 800;
   AngularServos[ServoClaw].MAX = 2400;
   AngularServos[ServoClaw].raw_1=2400;
@@ -107,7 +99,7 @@ void AngularServoInit(){// extreme value: 654~2400
   AngularServos[ServoClaw].ang_2=180; // This is the angle where the two claws are 90 degree with the centre line (180 degree with each other)
   AngularServos[ServoClaw].INITANGLE = 70;
   //Wrist Servo
-  AngularServos[ServoWrist].PIN = 12;
+  AngularServos[ServoWrist].PIN = ServoWrist_PIN;
   AngularServos[ServoWrist].MIN = 600;
   AngularServos[ServoWrist].MAX = 2400;
   AngularServos[ServoWrist].raw_1=2400;

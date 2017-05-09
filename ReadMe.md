@@ -47,17 +47,19 @@ You can change the pin assignment as you want after you understand the code. The
 
 | Pin | Function of pin | Defined location |
 | --- | --- | --- |
-| 10 | Base servo (a.k.a. middle servo) | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
-| 9 | Left servo   | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
-| 6 | Right servo | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
-| 5 | Claw servo | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
-| 12 | Encoder Channel A (Encoder1\_A) | &quot;ThisArm.ino&quot; |
-| 13 | Encoder Channel B (Encoder1\_B) | &quot;ThisArm.ino&quot; |
-| 11 | Encoder Push button (Encoder1\_Click) | &quot;ThisArm.ino&quot; |
-| A2 | Potentiometer for Base | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
+| 13 | Base servo (a.k.a. middle servo) | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
+| 12 | Left servo   | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
+| 11 | Right servo | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
+| 10 | Claw servo | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
+| 9 | Wrist servo | Procedure &quot;AngularServoInit()&quot; in &quot;AngularServo.h&quot; |
+| 5 | Encoder Channel A (Encoder1\_A) | &quot;ThisArm.ino&quot; |
+| 6 | Encoder Channel B (Encoder1\_B) | &quot;ThisArm.ino&quot; |
+| 7 | Encoder Push button (Encoder1\_Click) | &quot;ThisArm.ino&quot; |
+| A0 | Potentiometer for Base | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
 | A1 | Potentiometer for Shoulder | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
-| A0 | Potentiometer for Elbow | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
+| A2 | Potentiometer for Elbow | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
 | A3 | Potentiometer for Claw | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
+| A3 | Potentiometer for Wrist | Procedure &quot;initJointsControl()&quot; of &quot;AnalogControl.h&quot; |
 
 ## Source Code Files Explained
 
@@ -76,7 +78,7 @@ This part aim to deliver a brief view on structure and usage of different files.
 | GCode.ino | Contains functions for taking G-code and convert it to arm output. |
 | InitFunctions.h | Header for InitFunctions.ino |
 | InitFunctions.ino | Contains Initialize functions for different machine stage |
-| ThisArm.ino | The Main file of the This Arm software |
+| ThisArm.ino | The Main file of the This Arm software. PIN assignment |
 | StageContainer.h | Contains structures that help to manage different stages of the firmware. |
 | Transformation.h | Contains functions for Linear linear interpolation |
 
@@ -98,4 +100,3 @@ Available action:
 
 - GCode CNC Demo by MarginallyClever
   - [https://github.com/MarginallyClever/GcodeCNCDemo](https://github.com/MarginallyClever/GcodeCNCDemo)
-

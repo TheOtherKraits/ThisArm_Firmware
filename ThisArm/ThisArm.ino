@@ -7,7 +7,30 @@
 // Copyright at end of file.
 // please see https://github.com/lamjonah/ThisArm_Firmware for more information.
 
+//PIN definition
+#define Encoder1_A 5
+#define Encoder1_B 6
+#define Encoder1_Click 7
 
+#define ServoBase_PIN 13
+#define ServoLeft_PIN  12
+#define ServoRight_PIN 11
+#define ServoClaw_PIN  10
+#define ServoWrist_PIN 9
+
+#define JointElbow_PIN A0
+#define JointShoulder_PIN A1
+#define JointBase_PIN A2
+#define JointClaw_PIN A3
+#define JointWrist_PIN A4
+
+//servo control setup
+#define NumOfServo 5
+#define ServoBase 0
+#define ServoLeft 1
+#define ServoRight 2
+#define ServoClaw 3
+#define ServoWrist 4
 
 #include <Encoder.h>
 #include <Servo.h>
@@ -26,11 +49,6 @@
 //For Debugging 
 void DisplayRaw();
 void EmptyProc();
-
-//encoder definition
-#define Encoder1_Click 11
-#define Encoder1_A 12
-#define Encoder1_B 13
 
 byte Drag_Flag=0;//flag indicate whether a Drag action occured
 long ReleaseTurnCount =0;
